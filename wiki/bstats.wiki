@@ -2,11 +2,20 @@
 
 = Exploring Python Profile Data With bstats =
 
-This is a wrapper on the python stats object to support interactive wandering and exploration of profile data. This might work with stats and cProfile, but it's really only been tested with
-output from hotshot on python 2.4.3
 
-`func` usually means a tuple of `(file, line, func_name)` (canonical form)
-`func` can also be a string, as specially formatted by the underlying stats object
+This is a wrapper on the Python stats object to support interactive wandering and exploration of profile data. This might work with stats and cProfile, but it's really only been tested with
+output from hotshot on Python 2.4.3
+
+== Download ==
+
+[http://msolo.googlecode.com/svn/trunk/bstats/bstats.py bstats.py]
+
+== Notes ==
+
+  * `func` usually means a tuple of `(file, line, func_name)` (canonical form)
+  * `func` can also be a string, as specially formatted by the underlying stats object
+
+= Profiling Tutorial =
 
 Presuming you have collection some stats data, The basic work flow is this:
 
@@ -112,3 +121,4 @@ functions, but occaisionally I find it useful.
 [32500] 32900/100    0.138    0.000   20.215    0.202 /Zope/2.10/lib/python/zope/tal/talinterpreter.py:518(do_optTag)
 [32900] 39300/100    0.088    0.000   20.216    0.202 /Zope/2.10/lib/python/zope/tal/talinterpreter.py:530(do_optTag_tal)
 }}}
+
