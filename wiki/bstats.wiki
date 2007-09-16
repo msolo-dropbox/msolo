@@ -66,10 +66,10 @@ often.
       100    0.003    0.000   20.407    0.204 /Plone/3.0/Products/CMFDynamicViewFTI/browserdefault.py:89(__call__)
 }}}
 
-The discard the first 2-3 lines - they are the stats collection process.
+Discard the first 2-3 lines - they are the stats collection process.
 
 The next lines are pretty obvious too, so again, not super helpful. We did 100
-web hits, so these things got run 100 time.
+web hits, so these things got run 100 times.
 
 Adding a restriction on call count, we can see things that got executed twice
 per web hit (probably).
@@ -105,7 +105,7 @@ To show what functions this function calls:
 Another function that can have some limited utility is
 `print_common_call_chain` - this tries to guess at the most common way the given
 function was called.  It can make mistakes, and it will just bail on recursive
-functions, but occaisionally I find it useful.
+functions, but occasionally I find it useful.
 
 {{{
 >>> b.print_common_call_chain('/Zope/2.10/lib/python/Shared/DC/Scripts/Bindings.py:311(__call__)', 10)
@@ -122,3 +122,4 @@ functions, but occaisionally I find it useful.
 [32900] 39300/100    0.088    0.000   20.216    0.202 /Zope/2.10/lib/python/zope/tal/talinterpreter.py:530(do_optTag_tal)
 }}}
 
+ 
