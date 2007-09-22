@@ -13,5 +13,9 @@ The syntax itself is extremely similar to Cheetah, however there are some direct
 Trivial Cheetah templates will probably compile in Sparrow, so that's probably a good place to start.
 
  
+= Current Release =
+ * [http://msolo.googlecode.com/svn/tags/sparrow-0.5.2 sparrow-0.5.2]
+ 
+ 
  
  
