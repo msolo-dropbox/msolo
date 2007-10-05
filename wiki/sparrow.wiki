@@ -12,10 +12,27 @@ The syntax itself is extremely similar to Cheetah, however there are some direct
 
 Trivial Cheetah templates will probably compile in Sparrow, so that's probably a good place to start.
 
- 
 = Current Release =
- * [http://msolo.googlecode.com/svn/tags/sparrow-0.5.2 sparrow-0.5.2]
+ * [http://msolo.googlecode.com/svn/tags/sparrow-0.5.5 sparrow-0.5.5]
  
- 
- 
- 
+= Performance =
+
+Sparrow has a basic optimizer that can make certain operations much faster. I found a basic table generation benchmark written by the Genshi team.  I modified it to add Cheetah (my baseline performance target) and Sparrow.
+
+{{{
+weaponx:~/Projects/sparrow> python tests/perf/bigtable.py
+Genshi tag builder                            967.96 ms
+Genshi template                               721.81 ms
+Genshi template + tag builder                1029.01 ms
+Mako Template                                 240.77 ms
+Cheetah template                               56.39 ms
+Sparrow template                               59.54 ms
+Sparrow template -O1                           53.75 ms
+Sparrow template -O2                           15.90 ms
+Sparrow template -O3                            9.35 ms
+
+weaponx:~/Projects/sparrow> python                           
+Python 2.4.3 (#1, Jan  5 2007, 00:05:16) 
+[GCC 4.0.1 (Apple Computer, Inc. build 5367)] on darwin
+>>> 
+}}}
