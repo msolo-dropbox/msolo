@@ -17,7 +17,7 @@ Trivial Cheetah templates will probably compile in Sparrow, so that's probably a
  
 = Performance =
 
-Sparrow has a basic optimizer that can make certain operations much faster. I found a basic table generation benchmark written by the Genshi team.  I modified it to add Cheetah (my baseline performance target) and Sparrow.
+Sparrow has a basic optimizer that can make certain operations much faster. I found a basic 10x1000 table  generation benchmark written by the Genshi team.  I modified it to add Cheetah (my baseline performance target) and Sparrow. This is by no means exhaustive proof that Sparrow is always fast, just that in a simple case of burning through a loop of generating text, it's not too shabby.
 
 {{{
 weaponx:~/Projects/sparrow> python tests/perf/bigtable.py
