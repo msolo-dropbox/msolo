@@ -6,6 +6,7 @@ Sparrow is a template language heavily inspired by Cheetah. It started out as an
 
 At this point, Sparrow works - at least in theory. There are basic tests cases that assure templates are parse, compile, generate and execute correctly. Most language features are covered with a high-level test.
 
+
 = Details =
 
 The syntax itself is extremely similar to Cheetah, however there are some directives and language features that have been omitted (usually on purpose).  The change log and parser.g file are currently the primary source of information on this, which is not the best. More documentation to come.
@@ -13,7 +14,15 @@ The syntax itself is extremely similar to Cheetah, however there are some direct
 Trivial Cheetah templates will probably compile in Sparrow, so that's probably a good place to start.
 
 = Current Release =
+
+This was "current" a while back. Trunk is semi-stable as there as reasonable regression tests.
+
  * [http://msolo.googlecode.com/svn/tags/sparrow-0.5.5 sparrow-0.5.5]
+
+
+= Release Notes =
+
+I note most of the progress in the [http://msolo.googlecode.com/svn/trunk/sparrow/CHANGES change log]. The biggest addition is the alternate front end to support an attribute language (think TAL or Kid).
  
 = Performance =
 
