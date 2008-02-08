@@ -45,6 +45,9 @@ Adjusting the size of the stat cache results in a lot more memory allocating and
 
 This has only been extensively tested on Linux (SuSE 10.1 64-bit). It compiles and seems to run on my MacBook.
 
+= Download =
+
+ * [http://msolo.googlecode.com/files/lighttpd-aio-1.4.11.8.tbz lighttpd-aio-1.4.11.8.tbz]
 
 = Compiling =
 
