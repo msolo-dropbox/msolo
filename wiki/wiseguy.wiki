@@ -1,0 +1,41 @@
+#summary FastCGI->WSGI adapter
+
+= Introduction =
+
+Wiseguy is a WSGI compliant FastCGI server largely implemented in C for speed.  It contains a few patches on top of the venerable C implementation to deal with various bad behaviors under high load.  In addition to being reasonably fast and low overhead, it contains a number of features that make it well suited for large production sites.
+
+= Details =
+
+== Process Management ==
+
+== Embedded Admin HTTP Server ==
+
+Right now, wiseguy supports spawning a small HTTP server on a separate port (usually 4001) which can be used for managing the wiseguy daemon.  Currently, it only allows connections from localhost.
+
+=== Cycle Children ===
+
+This is adds additional options to the usual SIGHUP behavior.
+
+ * `curl http://localhost:4001/server-cycle?workers=4&skew=2&force=1`
+    * workers - dynamically adjust the number of worker processes
+       * (no sanity checking - 32768 would not be a good input)
+    * skew - seconds between child kills - prevents machine from cpu spikes caused by restarting interpreters
+    * force - send a SIGKILL to actually kill the children
+
+=== Profiling CPU Consumption===
+
+Spawn a new child to collect Hotshot profiling data.
+
+ * `curl http://localhost:4001/server-profile?request_count=1000&profile_uri=^/home`
+    * request_count - number of requests to run through the profiler
+    * profile_uri - a regex that indicates if a request should be run through the profiler
+
+If you specify both request_count and profile_uri, as in the example, you will collect 1000 executions of servlets matching /home.
+
+=== Profiling Memory Consumption===
+
+Sometimes it is helpful to know when memory is getting consumed at a macro level. This will show up in the wiseguy log file. Note that this will cycle all of the children.
+
+ * `curl http://localhost:4001/server-profile-memory?enable=1&min_delta=0`
+    * enable - 0 or 1 - toggles memory logging on and off
+    * min_delta - minimum change in memory usage (in kilobytes) that is worth logging
