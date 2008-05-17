@@ -9,7 +9,7 @@ Wiseguy is a WSGI compliant FastCGI server largely implemented in C for speed.  
 There are three components to wiseguy, to it takes a few moments.  The WiseguyInstallationInstructions list a step-by-step process that should work.
 
 
-= Examples =
+= Example Tutorial =
 
 A small test application is included to make sure the wiseguy installation went well and that you have some hope of running your own.  The WiseguyExampleTutorial should take a few moments to go through.
 
