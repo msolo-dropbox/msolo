@@ -1,8 +1,18 @@
-#summary FastCGI->WSGI adapter
+#summary FastCGI to WSGI adapter
 
 = Introduction =
 
 Wiseguy is a WSGI compliant FastCGI server largely implemented in C for speed.  It contains a few patches on top of the venerable C implementation to deal with various bad behaviors under high load.  In addition to being reasonably fast and low overhead, it contains a number of features that make it well suited for large production sites.
+
+= Installing =
+
+There are three components to wiseguy, to it takes a few moments.  The InstallationInstructions will give you step-by-step instructions to make it work.
+
+
+= Examples =
+
+A small test application is included to make sure the wiseguy installation went well and that you have some hope of running your own.  The ExampleTutorial should take a few moments to go through.
+
 
 = Details =
 
@@ -39,3 +49,16 @@ Sometimes it is helpful to know when memory is getting consumed at a macro level
  * `curl http://localhost:4001/server-profile-memory?enable=1&min_delta=0`
     * enable - 0 or 1 - toggles memory logging on and off
     * min_delta - minimum change in memory usage (in kilobytes) that is worth logging
+
+
+= Current Release =
+
+Trunk is semi-stable, but wiseguy-0.5.4 is production-ready.
+
+ * [http://msolo.googlecode.com/svn/tags/wiseguy-0.5.4 wiseguy-0.5.4]
+
+
+= Release Notes =
+
+I note most of the progress in the [http://msolo.googlecode.com/svn/trunk/wiseguy/CHANGES change log].
+
