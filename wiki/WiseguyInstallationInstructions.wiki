@@ -3,7 +3,7 @@
 Download the install source:
 
 {{{
-wget http://msolo.googlecode.com/files/wiseguy-0.5.4.
+wget http://msolo.googlecode.com/files/wiseguy-0.5.4.tbz
 tar xjvf wiseguy-0.5.4.tbz
 }}}
 
