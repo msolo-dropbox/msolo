@@ -6,12 +6,12 @@ Wiseguy is a WSGI compliant FastCGI server largely implemented in C for speed.  
 
 = Installing =
 
-There are three components to wiseguy, to it takes a few moments.  The InstallationInstructions will give you step-by-step instructions to make it work.
+There are three components to wiseguy, to it takes a few moments.  The WiseguyInstallationInstructions list a step-by-step process that should work.
 
 
 = Examples =
 
-A small test application is included to make sure the wiseguy installation went well and that you have some hope of running your own.  The ExampleTutorial should take a few moments to go through.
+A small test application is included to make sure the wiseguy installation went well and that you have some hope of running your own.  The WiseguyExampleTutorial should take a few moments to go through.
 
 
 = Details =
@@ -61,4 +61,3 @@ Trunk is semi-stable, but wiseguy-0.5.4 is production-ready.
 = Release Notes =
 
 I note most of the progress in the [http://msolo.googlecode.com/svn/trunk/wiseguy/CHANGES change log].
-
