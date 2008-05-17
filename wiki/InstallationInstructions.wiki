@@ -1,0 +1,19 @@
+#summary Installing wiseguy for the first time...
+
+I tend to use encap, so my `$PREFIX` is frequently something like `/usr/local/encap/wiseguy-x.y.z`, but `/usr/local` is a safe choice.
+
+{{{
+# you might want to change these two variable
+BASEDIR="./" 
+PREFIX="/usr/local"
+cd $BASEDIR/wiseguy-deps/fcgi
+./configure --prefix=$PREFIX
+make
+make install
+cd $BASEDIR/wiseguy-deps/py-fastcgi
+python ./setup.py build_ext -I$PREFIX/include -L$PREFIX/lib
+python ./setup.py install --prefix=$PREFIX
+cd $BASEDIR/wiseguy
+python ./setup.py build
+python ./setup.py install --prefix=$PREFIX
+}}}
