@@ -19,7 +19,52 @@ A small test application is included to make sure the wiseguy installation went 
 
 Wiseguy uses a preforking model where multiple processes answer FCGI requests on a single TCP or Unix domain socket.  It is known to work on Mac OS X and has run happily on a few Linux variants (notably SuSE 10.x and Ubuntu 6.10).
 
-== Process Management ==
+== Command Line Options ==
+
+
+--bind-address
+ FCGI TCP host:port or unix domain socket path
+  * `--bind-address=127.0.0.1:4000`
+  * `--bind-address=/var/run/wiseguyd.sock`
+
+--wsgi-app=WSGI_APP
+ fully qualified symbol that is WSGI compliant
+  * `--wsgi-app=wiseguy.example.test_app.simple_app`
+
+--management-address
+ HTTP TCP host:port
+  * `--management-address=127.0.0.1:4001`
+
+--max-requests
+ Max requests handled per child. Normally this is unlimited, but for debugging, 1 is a useful option.
+  * `--max-requests=1`
+ 
+--max-rss
+ The max memory resident set size (RSS) in kilobyes before a child gets a SIGTERM. This is handy when running in production.
+  * `--max-rss=100000` (limit each child to 100MB)
+
+--accept-input-timeout
+ Set a timeout in seconds between accept() and read(). This is an approximate antidote to weird condition running behind Apache. If a connection takes longer that this value, the connection is aborted.
+
+--workers
+ Set the number of preforked worker processes. Usually a good number to start with is twice the number of physical CPUs. In debug mode, one process is usually good.
+  * `--workers=1`
+
+--log-level
+ Set the base log level.
+  * `--log-level=DEBUG`
+
+--profile-path
+ Log hotshot profile data to this path. The can also be done dynamically in the management server.
+ * `--profile-path=/tmp/wiseguyd.pstats
+
+--profile-uri
+ Limit profiles to URIs matching this regex
+  * `--profile-uri=^/home`
+
+--log-file=LOG_FILE_PATH   
+
+--pid-file=PID_FILE_PATH
 
 == Embedded Admin HTTP Server ==
 
@@ -29,7 +74,7 @@ Right now, wiseguy supports spawning a small HTTP server on a separate port (usu
 
 This is adds additional options to the usual SIGHUP behavior.
 
- * `curl http://localhost:4001/server-cycle?workers=4&skew=2&force=1`
+ * `curl "http://localhost:4001/server-cycle?workers=4&skew=2&force=1"`
     * workers - dynamically adjust the number of worker processes
        * (no sanity checking - 32768 would not be a good input)
     * skew - seconds between child kills - prevents machine from cpu spikes caused by restarting interpreters
@@ -39,7 +84,7 @@ This is adds additional options to the usual SIGHUP behavior.
 
 Spawn a new child to collect Hotshot profiling data.
 
- * `curl http://localhost:4001/server-profile?request_count=1000&profile_uri=^/home`
+ * `curl "http://localhost:4001/server-profile?request_count=1000&profile_uri=^/home"`
     * request_count - number of requests to run through the profiler
     * profile_uri - a regex that indicates if a request should be run through the profiler
 
@@ -49,7 +94,7 @@ If you specify both request_count and profile_uri, as in the example, you will c
 
 Sometimes it is helpful to know when memory is getting consumed at a macro level. This will show up in the wiseguy log file. Note that this will cycle all of the children.
 
- * `curl http://localhost:4001/server-profile-memory?enable=1&min_delta=0`
+ * `curl "http://localhost:4001/server-profile-memory?enable=1&min_delta=0"`
     * enable - 0 or 1 - toggles memory logging on and off
     * min_delta - minimum change in memory usage (in kilobytes) that is worth logging
 
