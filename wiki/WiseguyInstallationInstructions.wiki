@@ -61,4 +61,6 @@ options:
   --pid-file=PID_FILE   
 }}}
 
-I would proceed to the WiseguyExampleTutorial.
+If Python cannot load libfcgi.so (or some variant) you probably need to rerun ldconfig.
+
+If all went well, I would proceed to the WiseguyExampleTutorial.
