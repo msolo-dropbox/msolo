@@ -29,38 +29,38 @@ Wiseguy uses a preforking model where multiple processes answer FCGI requests on
 
 --wsgi-app=WSGI_APP
  fully qualified symbol that is WSGI compliant
-  * `--wsgi-app=wiseguy.example.test_app.simple_app`
+  `--wsgi-app=wiseguy.example.test_app.simple_app`
 
 --management-address
  HTTP TCP host:port
-  * `--management-address=127.0.0.1:4001`
+  `--management-address=127.0.0.1:4001`
 
 --max-requests
  Max requests handled per child. Normally this is unlimited, but for debugging, 1 is a useful option.
-  * `--max-requests=1`
+  `--max-requests=1`
  
 --max-rss
  The max memory resident set size (RSS) in kilobyes before a child gets a SIGTERM. This is handy when running in production.
-  * `--max-rss=100000` (limit each child to 100MB)
+  `--max-rss=100000` (limit each child to 100MB)
 
 --accept-input-timeout
  Set a timeout in seconds between accept() and read(). This is an approximate antidote to weird condition running behind Apache. If a connection takes longer that this value, the connection is aborted.
 
 --workers
  Set the number of preforked worker processes. Usually a good number to start with is twice the number of physical CPUs. In debug mode, one process is usually good.
-  * `--workers=1`
+  `--workers=1`
 
 --log-level
  Set the base log level.
-  * `--log-level=DEBUG`
+  `--log-level=DEBUG`
 
 --profile-path
  Log hotshot profile data to this path. The can also be done dynamically in the management server.
- * `--profile-path=/tmp/wiseguyd.pstats
+  `--profile-path=/tmp/wiseguyd.pstats`
 
 --profile-uri
  Limit profiles to URIs matching this regex
-  * `--profile-uri=^/home`
+  `--profile-uri=^/home`
 
 --log-file=LOG_FILE_PATH   
 
