@@ -2,11 +2,13 @@
 
 = Introduction =
 
-Wiseguy is a WSGI compliant FastCGI server largely implemented in C for speed.  It contains a few patches on top of the venerable C implementation to deal with various bad behaviors under high load.  In addition to being reasonably fast and low overhead, it contains a number of features that make it well suited for large production sites.
+Wiseguy is a WSGI compliant FastCGI server built on top of the python-fastcgi and the Open Market FCGI library. It contains a few patches to deal with various bad behaviors under high load.  In addition to being reasonably fast and low overhead, it contains a number of features that make it well suited for large production sites.
+
+
 
 = Installing =
 
-There are three components to wiseguy, to it takes a few moments.  The WiseguyInstallationInstructions list a step-by-step process that should work.
+There are three components to wiseguy, so it takes a few moments.  The WiseguyInstallationInstructions list a step-by-step process that should work.
 
 
 = Example Tutorial =
@@ -16,11 +18,13 @@ A small test application is included to make sure the wiseguy installation went 
 
 = Details =
 
+Wiseguy uses a preforking model where multiple processes answer FCGI requests on a single TCP or Unix domain socket.  It is known to work on Mac OS X and has run happily on a few Linux variants (notably SuSE 10.x and Ubuntu 6.10).
+
 == Process Management ==
 
 == Embedded Admin HTTP Server ==
 
-Right now, wiseguy supports spawning a small HTTP server on a separate port (usually 4001) which can be used for managing the wiseguy daemon.  Currently, it only allows connections from localhost.
+Right now, wiseguy supports spawning a small HTTP server on a separate port (usually 4001) which can be used for managing the wiseguy daemon.  This is inactive by default, and specifying `--management-address` to `wiseguyd` turns it on. Currently, it only allows connections from localhost.
 
 === Cycle Children ===
 
