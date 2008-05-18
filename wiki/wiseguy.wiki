@@ -2,8 +2,7 @@
 
 = Introduction =
 
-Wiseguy is a WSGI compliant FastCGI server built on top of the python-fastcgi and the Open Market FCGI library. It contains a few patches to deal with various bad behaviors under high load.  In addition to being reasonably fast and low overhead, it contains a number of features that make it well suited for large production sites.
-
+Wiseguy is a WSGI compliant FastCGI server built on top of python-fastcgi and the Open Market FCGI library. It contains a few patches to deal with various bad behaviors under high load.  In addition to being reasonably fast and low overhead, it contains a number of features that make it well suited for large production sites.
 
 
 = Installing =
