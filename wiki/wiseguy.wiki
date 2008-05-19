@@ -14,6 +14,8 @@ There are three components to wiseguy, so it takes a few moments.  The WiseguyIn
 
 A small test application is included to make sure the wiseguy installation went well and that you have some hope of running your own.  The WiseguyExampleTutorial should take a few moments to go through.
 
+PN: I've added another sample to the examples. It is a basic routes app. Nothing special, and probably needs work, but you can try it out from the instructions here WiseguyExampleRoutes
+
 
 = Details =
 
