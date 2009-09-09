@@ -19,9 +19,11 @@ PN: I've added another sample to the examples. It is a basic routes app. Nothing
 
 = Details =
 
-Wiseguy uses a preforking model where multiple processes answer FCGI requests on a single TCP or Unix domain socket.  It is known to work on Mac OS X and has run happily on a few Linux variants (notably SuSE 10.x and Ubuntu 6.10).
+Wiseguy uses a preforking model where multiple processes answer FCGI requests on a single TCP or Unix domain socket.  It is known to work on Mac OS X and has run happily on a few Linux variants (notably SuSE 10.x and Ubuntu 9.04).
 
 If you need to customize the behavior further, you might want look at WiseguyCallTrace. This explains when certain functions get called which can be otherwise tricky to decipher since the internal implementation is a little fragmented.
+
+The 0.6.x branch of wiseguy includes a forking procedure called "stem cell" - that is documented in WiseguyStemCell.
 
 == Command Line Options ==
 
