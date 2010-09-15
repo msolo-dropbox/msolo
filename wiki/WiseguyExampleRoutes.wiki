@@ -11,7 +11,7 @@ Now you need to tell `wiseguyd` to run the test application.
 wiseguyd --wsgi-app=wiseguy.examples.routes.routes.app
 }}}
 
-Once again, hopefully all went well. If there was a problem, most likely it's that the examples directory is not installed in wiseguy. You'll want to check the build process to be sure.
+Once again, hopefully all went well. If there was a problem, most likely it's that the examples directory is not installed in wiseguy. Check out WiseguyEnv to be sure.
 
 = Testing Routes =
 
