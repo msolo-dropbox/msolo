@@ -37,7 +37,9 @@ Server: lighttpd/1.4.15
 Hello from Wiseguy!
 }}}
 
-Great success!  If you want to check the environment wiseguy provides, you can run this:
+Great success!  (If not, check this WiseguyEnv)
+
+If you want to check the environment wiseguy provides, you can run this:
 
 {{{
 curl -i "http://localhost:8000/wiseguy/env"
