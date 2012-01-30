@@ -5,11 +5,11 @@ This is the launch procedure when running under stemcell. It is more complex, bu
  * script start
  * open logging
  * preload modules
- * bind mgmt port
- * bind main port (80/4000/unix socket)
+ * bind mgmt port (tcp http)
+ * bind main port (80/4000/unix socket, fcgi or http)
    * drop privileges
  * bind fd_server
- * bind µmgmt server
+ * bind µmgmt server (derived from the fd_server address)
  * superfork and daemonize
    * close stdin/stdout/stderr 
  * start mgmt thread
